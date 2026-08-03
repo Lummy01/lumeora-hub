@@ -3,6 +3,7 @@ import StatsGrid from "@/components/dashboard/StatsGrid";
 import RecentResources from "@/components/dashboard/RecentResources";
 import QuickActions from "@/components/dashboard/QuickActions";
 import ActivityFeed from "@/components/dashboard/ActivityFeed";
+import UploadResourceButton from "@/components/upload/UploadResourceButton";
 
 export default function DashboardPage() {
   return (
@@ -17,9 +18,13 @@ export default function DashboardPage() {
       </h1>
 
       <p className="mt-4 text-gray-400">
-        This is your creator dashboard. From here you'll manage resources,
-        uploads, analytics, and your profile.
-      </p>
+  This is your creator dashboard. From here you'll manage resources,
+  uploads, analytics, and your profile.
+</p>
+
+<div className="mt-8">
+  <UploadResourceButton />
+</div>
 
     </div>
 

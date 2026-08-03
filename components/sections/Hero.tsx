@@ -1,6 +1,12 @@
-import ResourceCard from "../ui/ResourceCard";
+"use client";
 
+import { useWallet } from "@aptos-labs/wallet-adapter-react";
+import ResourceCard from "../ui/ResourceCard";
+import { useRouter } from "next/navigation";
 export default function Hero() {
+  const { connected } = useWallet();
+const router = useRouter();
+
   return (
     <section
   id="home"
@@ -50,25 +56,34 @@ export default function Hero() {
 
           <div className="mt-10 flex flex-wrap gap-5">
 
-            <button className="rounded-xl bg-violet-600 px-8 py-4 font-semibold transition hover:scale-105 hover:bg-violet-500">
-              Explore Resources
-            </button>
+  <button className="rounded-xl bg-violet-600 px-8 py-4 font-semibold transition hover:scale-105 hover:bg-violet-500">
+    Explore Resources
+  </button>
 
-            <button className="rounded-xl border border-white/20 px-8 py-4 font-semibold transition hover:border-violet-500 hover:bg-white/5">
-              Start Sharing
-            </button>
+  <button
+  onClick={() => {
+    if (connected) {
+      router.push("/dashboard");
+    } else {
+      alert("Please connect your wallet from the top-right corner first.");
+    }
+  }}
+  className="rounded-xl border border-white/20 px-8 py-4 font-semibold transition hover:border-violet-500 hover:bg-white/5"
+>
+  Create Portfolio
+</button>
 
-          </div>
+</div>
 
           <div className="mt-10 flex flex-wrap gap-6 text-sm text-gray-400">
 
-            <div>✅ Secure Storage</div>
+  <div>✓ Aptos Wallet</div>
 
-            <div>✅ Fast Downloads</div>
+  <div>✓ Shelby Storage</div>
 
-            <div>✅ Creator Profiles</div>
+  <div>✓ Creator Ownership</div>
 
-          </div>
+</div>
 
         </div>
 

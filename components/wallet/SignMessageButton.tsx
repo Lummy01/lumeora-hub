@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useAuth } from "@/components/auth/AuthProvider";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
 
 export default function SignMessageButton() {
   const { connected, signMessage } = useWallet();
 
-  const [signed, setSigned] = useState(false);
+  const { authenticated, setAuthenticated } = useAuth();
 
   const handleSign = async () => {
     if (!connected || !signMessage) return;
@@ -17,7 +17,7 @@ export default function SignMessageButton() {
         nonce: crypto.randomUUID(),
       });
 
-      setSigned(true);
+      setAuthenticated(true);
 
       alert("Message signed successfully!");
     } catch (error) {
@@ -32,7 +32,8 @@ export default function SignMessageButton() {
       onClick={handleSign}
       className="rounded-xl border border-violet-500 px-6 py-3 font-semibold text-violet-400 transition hover:bg-violet-500 hover:text-white"
     >
-      {signed ? "✓ Authenticated" : "Sign Message"}
+      {authenticated ? "✓ Authenticated" : "Sign Message"}
     </button>
   );
 }
+

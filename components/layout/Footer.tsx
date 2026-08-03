@@ -117,7 +117,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10 py-6 text-center text-sm text-gray-500">
 
-        © 2026 Lumeora Hub. Built with ❤️ using Shelby.
+        © 2026 Lumeora Hub. Built on Aptos. Powered by Shelby.
 
       </div>
 
