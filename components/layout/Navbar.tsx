@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import ConnectWalletButton from "@/components/wallet/ConnectWalletButton";
 export default function Navbar() {
 
   const [scrolled, setScrolled] = useState(false);
@@ -67,12 +68,7 @@ useEffect(() => {
 
         </div>
 
-        <Link
-  href="/signup"
-  className="rounded-xl bg-gradient-to-r from-violet-600 to-blue-600 px-6 py-3 font-semibold text-white shadow-lg shadow-violet-600/20 transition-all duration-300 hover:scale-105 hover:from-violet-500 hover:to-blue-500 hover:shadow-violet-500/40"
->
-  Get Started
-</Link>
+        <ConnectWalletButton />
 
       </nav>
     </header>
