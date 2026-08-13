@@ -22,32 +22,14 @@ export default function Sidebar() {
         </Link>
 
         <Link
-          href="#"
-          className="block rounded-xl px-4 py-3 transition hover:bg-white/5"
-        >
-          📁 My Resources
-        </Link>
+  href="/dashboard/resources"
+  className="block rounded-xl px-4 py-3 transition hover:bg-white/5"
+>
+  📁 My Resources
+</Link>
 
-        <Link
-          href="#"
-          className="block rounded-xl px-4 py-3 transition hover:bg-white/5"
-        >
-          ⬆️ Upload Resource
-        </Link>
 
-        <Link
-          href="#"
-          className="block rounded-xl px-4 py-3 transition hover:bg-white/5"
-        >
-          👤 Profile
-        </Link>
-
-        <Link
-          href="#"
-          className="block rounded-xl px-4 py-3 transition hover:bg-white/5"
-        >
-          ⚙️ Settings
-        </Link>
+        
 
       </nav>
 

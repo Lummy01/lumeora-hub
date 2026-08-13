@@ -1,3 +1,7 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+
 type ResourceRowProps = {
   icon: string;
   title: string;
@@ -11,11 +15,19 @@ export default function ResourceRow({
   type,
   updated,
 }: ResourceRowProps) {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/dashboard/resources");
+  };
+
   return (
-    <div className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-4 transition hover:border-violet-500/30 hover:bg-white/10">
-
+    <button
+      type="button"
+      onClick={handleClick}
+      className="flex w-full items-center justify-between rounded-xl border border-white/10 bg-white/5 p-4 text-left transition hover:border-violet-500/30 hover:bg-white/10"
+    >
       <div className="flex items-center gap-4">
-
         <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-500/10 text-2xl">
           {icon}
         </div>
@@ -29,13 +41,11 @@ export default function ResourceRow({
             {type}
           </p>
         </div>
-
       </div>
 
       <span className="text-sm text-gray-400">
         {updated}
       </span>
-
-    </div>
+    </button>
   );
 }

@@ -1,9 +1,8 @@
 import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import StatsGrid from "@/components/dashboard/StatsGrid";
 import RecentResources from "@/components/dashboard/RecentResources";
-import QuickActions from "@/components/dashboard/QuickActions";
 import ActivityFeed from "@/components/dashboard/ActivityFeed";
-import UploadResourceButton from "@/components/upload/UploadResourceButton";
+
 
 export default function DashboardPage() {
   return (
@@ -22,23 +21,12 @@ export default function DashboardPage() {
   uploads, analytics, and your profile.
 </p>
 
-<div className="mt-8">
-  <UploadResourceButton />
-</div>
 
     </div>
 
     <StatsGrid />
 
-   <div className="grid gap-8 lg:grid-cols-3">
-
-  <div className="lg:col-span-2">
-    <RecentResources />
-  </div>
-
-  <QuickActions />
-
-</div>
+   <RecentResources />
 
 <ActivityFeed />
 

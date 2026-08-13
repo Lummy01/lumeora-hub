@@ -1,4 +1,5 @@
 import FeaturedCard from "./FeaturedCard";
+import ResourceList from "./ResourceList";
 export default function FeaturedResources() {
   return (
     <section
@@ -20,26 +21,10 @@ export default function FeaturedResources() {
 
       <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 
-  <FeaturedCard
-  icon="🎨"
-  title="Modern UI Dashboard"
-  type="Figma Design"
-/>
-
-<FeaturedCard
-  icon="📄"
-  title="Product Requirements"
-  type="PDF Document"
-/>
-
-<FeaturedCard
-  icon="🖼️"
-  title="Landing Page Concept"
-  type="PNG Image"
-/>
+  
 
 </div>
-
+<ResourceList />
     </section>
   );
 }
