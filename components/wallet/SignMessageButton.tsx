@@ -1,12 +1,9 @@
 "use client";
 
-import { useAuth } from "@/components/auth/AuthProvider";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
 
 export default function SignMessageButton() {
   const { connected, signMessage } = useWallet();
-
-  const { authenticated, setAuthenticated } = useAuth();
 
   const handleSign = async () => {
     if (!connected || !signMessage) return;
@@ -16,8 +13,6 @@ export default function SignMessageButton() {
         message: "Welcome to Lumeora Hub! Sign this message to authenticate.",
         nonce: crypto.randomUUID(),
       });
-
-      setAuthenticated(true);
 
       alert("Message signed successfully!");
     } catch (error) {
@@ -32,8 +27,7 @@ export default function SignMessageButton() {
       onClick={handleSign}
       className="rounded-xl border border-violet-500 px-6 py-3 font-semibold text-violet-400 transition hover:bg-violet-500 hover:text-white"
     >
-      {authenticated ? "✓ Authenticated" : "Sign Message"}
+      Sign Message
     </button>
   );
 }
-
